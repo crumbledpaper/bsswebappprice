@@ -1,0 +1,92 @@
+{% extends "base.html" %}
+{% block content %}
+<style type="text/css">
+body {
+    overflow-y: auto !important;
+}
+</style>
+<main class="footer-main d-flex w-100" style="margin-top: 63px;">
+    <div class="container d-flex flex-column" style="top: 0px;position: absolute;">
+        <div class="row">
+            <div class="col-sm-10 col-md-8 col-lg-6 mx-auto d-table h-100">
+                <div class="d-table-cell align-middle">
+                    <div class="text-center" style="margin-top: 100px;margin-bottom: 100px;">
+                        <h1 style="filter: blur(0.4px); color: #3b7ddd;position: fixed;top: 0;left: 0;right: 0;background: white;width: 100vw;margin: 0;padding-bottom: 18px;text-align: left;padding-left: 20px;z-index: 2;"><svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" style="height: 56px;transform: translateY(15px);color: #3f3f3f;">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M10 21h7a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v11m0 5l4.879-4.879m0 0a3 3 0 104.243-4.242 3 3 0 00-4.243 4.242z"></path>
+                            </svg>
+                            Price Comparison Page
+                        </h1>
+                        <h1 style="color: #3f3f3f;margin-bottom: 0px;">Search for Products</h1>
+                        <form action="/search" method="post" style="margin-top: 0px;">
+                            <button style="transform: translateY(4px) translateX(-5800px);border-radius: 60px;height: 53px;background: #fff0;color: #fff0;width: 53px;border: none;" type=""></button><input disabled="" style="color:white;background: white;height: 60px;border-top-left-radius: 50px;border-bottom-left-radius: 50px;width: 28px;border-right: 0px;user-select: none;font-size: 20px;border: 2px solid #cecece;border-right-style: none;"><input type="text" name="product_name" placeholder="Enter product name or product id here" style="height: 60px;width: 40vw;border-left: 0px;text-decoration: none;font-size: 20px;border-top-right-radius: 50px;border-bottom-right-radius: 50px;border-radius: 0px;border-right-width: 0px;border-right-style: solid;padding-right: 0px;border: 2px solid #cecece;border-right-style: none;border-left-style: none;"><input disabled="" style="background: white;height: 60px;border-top-right-radius: 50px;border-bottom-right-radius: 50px;width: 63px;border-left: 0px;user-select: none;font-size: 20px;padding-left: 0px;border: 2px solid #cecece;border-left-style: none;">
+                            <button type="submit" style="transform: translateY(6px) translateX(-63px);transform: translateY(6px) translateX(-100%);padding:0px;border-radius: 60px;height: 60px;background: #1772ff;color: white;width: 60px;border: none;"><svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" style="height: 28px;">Search<path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg></button>
+                        </form>
+                        <h1 style="background: #ffffff36;filter: blur(0.4px);border-radius: 50px;    color: #3b7ddd; margin-bottom: 0px;"><span style=" color: #3f3f3f;font-weight: lighter;">Product Prices for </span>{{ product_name }}</h1>
+                        <div style="margin-bottom: 30px;">
+                            <div class="list" style="display: flex;width: fit-content;margin: auto;">
+                                {% for i in products %}
+                                <div class="box">
+                                    <div class="box-top">
+                                        <p style="font-weight: bolder;">{{i.website}}</p>
+                                    </div>
+                                    <p style="margin: 0;height: 220px;margin: auto;width: 100%;color: white;text-shadow: black 0px 1px;">
+                                        <picture>
+                                            <source alt="Special Days" srcset="{{i.img}}" type="image/jpeg">
+                                            <source alt="Special Days" srcset="https://img.cigarsinternational.com/product/iris/bgwhite/wd500/ghj-pm-art.jpg?v=518856" type="image/jpeg">
+                                            <img alt="Imagen" src="{{i.img}}" style="object-fit: contain;height: 100%;">
+                                        </picture>
+                                        <!-- <img src="{{i.img}}" alt="placeholder image" style="background-image:url('https://img.cigarsinternational.com/product/iris/bgwhite/wd500/ghj-pm-art.jpg?v=518856');background-size: cover;background-position: center;object-fit: contain;height: 100%;" /> -->
+                                    </p>
+                                    <div class="box-middle">
+                                        <p style="display:none;">id:{{i.id}}</p>
+                                        <p>{{i.title}}</p>
+                                        <p>MSRP:{{i.msrp}}</p>
+                                        <p>Price: {{i.white}}</p>
+                                        <p>{{i.description}}</p>
+                                    </div>
+                                    <div class="box-bottom">
+                                        <p><a href="{{ i.url }}" target="_blank" style="color: white;display: flex;height: 20px;width: 80px;margin: auto;">Website
+                                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                                                </svg>
+                                            </a></p>
+                                    </div>
+                                </div>
+                                {% endfor %}
+                            </div>
+                        </div>
+                        <table style="margin: auto;display: none;">
+                            <thead>
+                                <tr>
+                                    <th>Product ID</th>
+                                    <th>Website</th>
+                                    <th>MSRP</th>
+                                    <th>Price</th>
+                                    <th>Link</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for product in products %}
+                                <tr>
+                                    <td>{{ product.id }}</td>
+                                    <td>{{ product.website }}</td>
+                                    <td>{{ product.msrp }}</td>
+                                    <td>{{ product.white }}</td>
+                                    <td>
+                                        <a href="{{ product.url }}" style="  display: flex;">Visit Website
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                                <path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                                            </svg>
+                                        </a>
+                                    </td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                        <a href="/" class="btn btn-primary btn-lg" style="position: fixed;right: 28px;top: 20px;z-index: 10;">Return to Home</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endblock %}

@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block content %}
+<main class="footer-main d-flex w-100">
+    <div class="container d-flex flex-column">
+        <div class="row">
+            <div class="col-sm-10 col-md-8 col-lg-6 mx-auto d-table h-100">
+                <div class="d-table-cell align-middle">
+                    <div class="text-center">
+                        <h1 style="background: #ffffff26;color: #3b7ddd;filter: blur(0.4px);border-radius: 50px;display: table;margin: auto;z-index: 2;position: fixed;top: 7vh;left: calc(50vw - 205px);"><svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" style="height: 56px;transform: translateY(15px);color: #3f3f3f;">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M10 21h7a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v11m0 5l4.879-4.879m0 0a3 3 0 104.243-4.242 3 3 0 00-4.243 4.242z" />
+                            </svg>
+                            Price Comparison Page
+                        </h1>
+                        <h1>Search for Products</h1>
+                        <form action="/search" method="post">
+                            <button style="transform: translateY(4px) translateX(-5800px);border-radius: 60px;height: 53px;background: #fff0;color: #fff0;width: 53px;border: none;" type=""></button><input disabled="" style="color:white;background: white;height: 60px;border-top-left-radius: 50px;border-bottom-left-radius: 50px;width: 28px;border-right: 0px;user-select: none;font-size: 20px;border: 2px solid #cecece;border-right-style: none;"><input type="text" name="product_name" placeholder="Enter product name or product id here" style="height: 60px;width: 40vw;border-left: 0px;text-decoration: none;font-size: 20px;border-top-right-radius: 50px;border-bottom-right-radius: 50px;border-radius: 0px;border-right-width: 0px;border-right-style: solid;padding-right: 0px;border: 2px solid #cecece;border-right-style: none;border-left-style: none;"><input disabled="" style="background: white;height: 60px;border-top-right-radius: 50px;border-bottom-right-radius: 50px;width: 63px;border-left: 0px;user-select: none;font-size: 20px;padding-left: 0px;border: 2px solid #cecece;border-left-style: none;">
+                            <button type="submit" style="transform: translateY(6px) translateX(-63px);transform: translateY(6px) translateX(-100%);padding:0px;border-radius: 60px;height: 60px;background: #1772ff;color: white;width: 60px;border: none;"><svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" style="height: 28px;">Search<path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg></button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endblock %}

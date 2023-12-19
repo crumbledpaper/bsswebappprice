@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="description" content="Price Comparison App">
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link rel="shortcut icon" href="/static/img/icons/icon-48x48.png" />
+
+	<title>Price Comparison App</title>
+
+	<link href="/static/css/style.css" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+
+<body  class="" style="background: url('static/hero-bg.jpg');">
+
+{% block content %} {% endblock %}
+	</main>
+<div style="width:100vw;height: 60vh;"></div>
+	<footer class="footer footer-body">
+		<div class="container-fluid">
+			<div class="row text-muted">
+				<div class="h2 font-weight-normal mt-3 mb-4" style="height:25px;display: flex;position: fixed;bottom: 13px;width: 30vw;margin-left: 15px;">
+					<svg style="/*! height:15px; */" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+					  <path stroke-linecap="round" stroke-linejoin="round" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
+					</svg>
+					<div style="display:table;margin-top: auto;margin-bottom: auto;">{{user}}</div>
+				</div>
+				<div class="col-12 text-end">
+					<p class="mb-0">
+						<a href="/change_password">Change Password</a> &nbsp;
+						<a class="text-muted" href="https://bonitasmokeshop.com"
+							target="_blank"><strong>Bonita Smoke Shop is lit!</strong></a> &nbsp; &copy; 2023 Price Comparison App &nbsp; &nbsp; 
+					</p>
+				</div>
+			</div>
+		</div>
+	</footer>
+
+	<script src="/static/js/a pp.js"></script>
+
+</body>
+
+</html>

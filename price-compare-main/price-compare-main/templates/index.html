@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block content %}
+<main class="footer-main d-flex w-100">
+    <div class="container d-flex flex-column">
+        <div class="row">
+            <div class="col-sm-10 col-md-8 col-lg-6 mx-auto d-table h-100">
+                <div class="d-table-cell align-middle">
+                    <div class="text-center">
+                        <h1 style="background: #ffffff26;filter: blur(0.4px);border-radius: 50px;"><svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" style="height: 56px;transform: translateY(15px);">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M10 21h7a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v11m0 5l4.879-4.879m0 0a3 3 0 104.243-4.242 3 3 0 00-4.243 4.242z" />
+                            </svg>
+                            Price Comparison App
+                        </h1>
+                        <form action="/login" method="get">
+                            <div class="text-center mt-3" style="margin-top: 15px;">
+                                <button class="btn btn-lg btn-primary">Sign in</button>
+                                &nbsp;
+                                <a href="/signup" class="btn btn-lg btn-primary">Sign up</a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endblock %}
